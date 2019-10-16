@@ -134,11 +134,11 @@ def L0_Smoothing(im,lam=2e-2,kappa=2.0):
 
 def main():
 
-    im = cv2.imread("images/pflower.jpg")
+    im = cv2.imread("images/dog.jpg")
     S = L0_Smoothing(im, 0.01)
     im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
     S = S * 255
-    image_out = "out/pflowerout.jpg"
+    image_out = "out/dog_out.jpg"
     cv2.imwrite(image_out, S)
     plt.subplot(1, 2, 1)
     plt.imshow(im)
@@ -146,7 +146,7 @@ def main():
     plt.xticks([])
     plt.yticks([])
     plt.subplot(1, 2, 2)
-    im_out = cv2.imread("out/pflowerout.jpg")
+    im_out = cv2.imread("out/dog_out.jpg")
     im_out = cv2.cvtColor(im_out, cv2.COLOR_BGR2RGB)
     plt.imshow(im_out)
     plt.title("after", fontsize=8)
